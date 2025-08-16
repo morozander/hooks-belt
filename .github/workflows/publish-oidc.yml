@@ -1,35 +1,30 @@
-name: Publish to npm (OIDC)
+name: Publish Package
 
 on:
   push:
     tags:
       - 'v*' # Trigger on version tags (e.g., v1.0.0, v1.1.0)
 
+permissions:
+  id-token: write  # Required for OIDC
+  contents: read
+
 jobs:
   publish:
     runs-on: ubuntu-latest
-    permissions:
-      id-token: write # Required for OIDC
-      contents: read
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      
+      - uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'
           registry-url: 'https://registry.npmjs.org'
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Run tests
-        run: npm test
-
-      - name: Build library
-        run: npm run build:lib
-
-      - name: Publish to npm
-        run: npm publish
-        # No NODE_AUTH_TOKEN needed with OIDC - npm will use the OIDC token automatically 
+      
+      # Ensure npm 11.5.1 or later is installed
+      - name: Update npm
+        run: npm install -g npm@latest
+      
+      - run: npm ci
+      - run: npm run build:lib --if-present
+      - run: npm test
+      - run: npm publish 

@@ -4,6 +4,10 @@
   "version": "1.0.1",
   "description": "A comprehensive collection of useful React hooks for common use cases",
   "type": "module",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=11.5.1"
+  },
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
