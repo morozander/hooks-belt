@@ -225,7 +225,7 @@ npm run test:coverage
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/hooks-belt.git
+git clone https://github.com/morozander/hooks-belt.git
 cd hooks-belt
 ```
 
@@ -267,7 +267,7 @@ We welcome contributions! Here's how you can help:
 
 ### Reporting Issues
 
-- Use the [GitHub issue tracker](https://github.com/yourusername/hooks-belt/issues)
+- Use the [GitHub issue tracker](https://github.com/morozander/hooks-belt/issues)
 - Include a clear description of the problem
 - Provide steps to reproduce the issue
 - Include your environment details
@@ -300,12 +300,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Built with modern tooling (Vite, TypeScript, Vitest)
 - Thanks to all contributors and users
 
-## 📞 Support
-
-- **Documentation**: [GitHub Pages](https://yourusername.github.io/hooks-belt)
-- **Issues**: [GitHub Issues](https://github.com/yourusername/hooks-belt/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/yourusername/hooks-belt/discussions)
-
 ---
 
-Made with ❤️ by the React community
+Made with ❤️ for the React community
