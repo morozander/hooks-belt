@@ -2,8 +2,6 @@
 
 A comprehensive collection of useful React hooks for common use cases. Built with TypeScript and designed for production use.
 
-![Hooks Belt](public/hooks-belt.jpeg)
-
 ## ✨ Features
 
 - **10 Custom Hooks** - Covering the most common React development needs
