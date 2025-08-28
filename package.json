@@ -1,7 +1,7 @@
 {
   "name": "hooks-belt",
   "private": false,
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "A comprehensive collection of useful React hooks for common use cases",
   "type": "module",
   "engines": {
