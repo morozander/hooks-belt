@@ -37,7 +37,7 @@ export const useDownloadFile = () => {
   const downloadFile = async ({ data, fileName = 'file' }: { data: Blob, fileName?: string }) => {
     try {
       setIsLoading(true);
-      const url = URL.createObjectURL(data);
+      const url = window.URL.createObjectURL(data);
       const link = document.createElement('a');
       link.href = url;
       link.setAttribute('download', fileName);
