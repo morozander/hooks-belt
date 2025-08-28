@@ -4,7 +4,7 @@ A comprehensive collection of useful React hooks for common use cases. Built wit
 
 ## ✨ Features
 
-- **10 Custom Hooks** - Covering the most common React development needs
+- **11 Custom Hooks** - Covering the most common React development needs
 - **Full TypeScript Support** - Complete type definitions and IntelliSense
 - **Production Ready** - Well-tested and optimized for real-world usage
 - **Zero Dependencies** - Only requires React as a peer dependency
@@ -25,7 +25,7 @@ yarn add hooks-belt
 ## 🚀 Quick Start
 
 ```tsx
-import { useDebounce, useLocalStorage, useToggle } from 'hooks-belt'
+import { useDebounce, useLocalStorage, useToggle, useDownloadFile } from 'hooks-belt'
 
 function MyComponent() {
   const [searchTerm, setSearchTerm] = useState('')
@@ -33,6 +33,8 @@ function MyComponent() {
   
   const [user, setUser] = useLocalStorage('user', { name: 'John' })
   const [isOpen, toggle] = useToggle(false)
+  
+  const { downloadFile, isLoading } = useDownloadFile()
   
   // Your component logic here
 }
@@ -191,6 +193,28 @@ return (
       {isRunning ? 'Pause' : 'Resume'}
     </button>
   </div>
+)
+```
+
+### useDownloadFile
+Provides file download functionality with loading state management and automatic cleanup.
+
+```tsx
+const { downloadFile, isLoading } = useDownloadFile()
+
+const handleDownload = async () => {
+  const response = await fetch('/api/file')
+  const blob = await response.blob()
+  await downloadFile({ 
+    data: blob, 
+    fileName: 'document.pdf' 
+  })
+}
+
+return (
+  <button onClick={handleDownload} disabled={isLoading}>
+    {isLoading ? 'Downloading...' : 'Download File'}
+  </button>
 )
 ```
 
